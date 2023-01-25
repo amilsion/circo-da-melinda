@@ -1,0 +1,123 @@
+/* PROPIEDADES GENERALES */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #fff; 
+    min-height: 100vh;
+    overflow-x: hidden; 
+    background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(164, 196, 225) 100%);
+}
+
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+section::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    /*background: linear-gradient(to top, #fff, transparent);*/
+    z-index: 10;
+}
+
+section img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    pointer-events: none;
+    
+}
+
+.pulse-brilho {
+    animation: pulse-brilho .7s infinite;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: pulse-brilho;
+}
+@keyframes pulse-brilho{0%{transform:scale(1);filter:brightness(80%)}to{transform:scale(1.1);filter:brightness(100%)}}
+
+@keyframes touch {
+    0% {
+      transform: translateY(0%);
+      opacity: 0;
+    }
+    50%{
+      transform: translateY(30%);
+      opacity: 100;
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 0;
+    }
+  }
+
+@keyframes moedas {
+    0% {
+      transform: translateY(0%);
+    }
+    50%{
+      transform: translateY(7%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
+#btn{
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 11px;
+    color: #fff;
+    font-size: 0.8em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    background: #fe3bce;
+    border-radius: 20px;
+    transform: translateY(20px);
+    transform: translateX(30px);
+    position: absolute;
+    top: 70vh;
+}
+section #btn:hover{
+    background: #f17000;
+}
+
+/* AHORA HAREMOS EL RESPONSIVO */
+@media (min-width: 991px){
+    
+
+    section {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width:30%
+    }
+    section #btn {
+        font-size: 1.5em;
+		margin-left: 70px;
+    }
+    
+}
